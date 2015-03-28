@@ -31,13 +31,11 @@ window.Controls = (function() {
     };
     
     Controls.prototype._onClick = function() {
-        console.log('click');
         this._didJump = true;
         this.keys.click = true;
     };
 
     Controls.prototype._onKeyDown = function(e) {
-        console.log('onKeyDown');
         // Only jump if space wasn't pressed.
         if (e.keyCode === 32 && !this.keys.space) {
             this._didJump = true;
@@ -52,8 +50,6 @@ window.Controls = (function() {
     };
 
     Controls.prototype._onKeyUp = function(e) {
-        console.log('onKeyUp');
-
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = false;
