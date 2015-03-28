@@ -21,9 +21,28 @@
     overflow: hidden;
 
     // Some graphics
-    //background: red;
+    background: red;
     background-image: url("../images/ground.png"), url("../images/skyline.png");
     background-position: bottom left, bottom left;
     background-repeat: repeat-x, repeat-x;
     background-size: auto, cover;
+
+   // background-image: url("../images/skyline.png");
+  //  background-position: 0px 0px;
+    //background-repeat: repeat-x;
+
+   // animation: animatedBackground 10s linear infinite;
+    
+    
+    //background-image: url("../images/ground.png");
+    //background-position: 0px 0px, 0px 0px;
+    //background-repeat: repeat-x, repeat-x;
+    //animation: animatedBackground 5s linear infinite;
+    
+  //  animation-direction: reverse;
 }
+
+//@-webkit-keyframes animatedBackground {
+//    from { background-position: 0 0; }
+//    to { background-position: 100% 0; }
+//}
