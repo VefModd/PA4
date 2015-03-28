@@ -14,3 +14,20 @@ if (!window.requestAnimationFrame) {
             };
     })();
 }
+
+var music = document.getElementsByTagName('audio')[0];
+var muteButton = document.getElementById('mute');
+
+muteButton.style.cursor = 'pointer';
+muteButton.onclick = function() {
+    'use strict';
+    if(music.volume === 0) {
+        $('#mute').toggleClass('fa-volume-up');
+        $('#mute').toggleClass('fa-volume-off');
+        music.volume = 1;
+    } else {
+        $('#mute').toggleClass('fa-volume-up');
+        $('#mute').toggleClass('fa-volume-off');
+        music.volume = 0;
+    }
+};
