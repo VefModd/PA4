@@ -26,6 +26,12 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
+        if(Controls.keys.click) {
+            $('.test').addClass('trigger');
+            //this.pos.y -= 12;
+            Controls.keys.click = false;
+            //$('.test').removeClass('trigger');
+        }
         if(Controls.keys.space) {
             this.pos.y -= delta * SPEED;
         }

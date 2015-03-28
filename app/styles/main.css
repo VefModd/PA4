@@ -18,7 +18,10 @@
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
-  background: red;
+  background-image: url("../images/ground.png"), url("../images/skyline.png");
+  background-position: bottom left, bottom left;
+  background-repeat: repeat-x, repeat-x;
+  background-size: auto, cover;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_player\.scss}line{font-family:\000032}}
@@ -31,6 +34,37 @@
   background: blue;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_player\.scss}line{font-family:\0000314}}
+.trigger {
+  -webkit-animation-name: move-player-animation;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-direction: normal;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: none;
+}
+
+@-webkit-keyframes move-player-animation {
+  from {
+    -webkit-transform: none;
+  }
+  12.5% {
+    -webkit-transform: translate(100px, 0);
+  }
+  37.5% {
+    -webkit-transform: translate(100px, 200px);
+  }
+  62.5% {
+    -webkit-transform: translate(-100px, 200px);
+  }
+  87.5% {
+    -webkit-transform: translate(-100px, 0);
+  }
+  to {
+    -webkit-transform: none;
+  }
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
 .Scoreboard {
   position: absolute;

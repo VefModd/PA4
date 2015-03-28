@@ -21,5 +21,9 @@
     overflow: hidden;
 
     // Some graphics
-    background: red;
+    //background: red;
+    background-image: url("../images/ground.png"), url("../images/skyline.png");
+    background-position: bottom left, bottom left;
+    background-repeat: repeat-x, repeat-x;
+    background-size: auto, cover;
 }
