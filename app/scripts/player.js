@@ -14,7 +14,7 @@ window.Player = (function() {
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
-		this.pos = { x: 0, y: 0 };
+        this.pos = { x: 0, y: 0 };
 	};
 
 	/**

@@ -28,26 +28,12 @@ window.Controls = (function() {
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this))
             .on('click', this._onClick.bind(this));
-            //.on('mousedown', this._onMouseDown.bind(this))
-            //.on('mouseup', this._onMouseUp.bind(this));
     };
 
     Controls.prototype._onClick = function() {
         this._didJump = true;
         this.keys.click = true;
     };
-    /*
-    Controls.prototype._onMouseDown = function() {
-        console.log('onmousedown');
-        this._didJump = true;
-        this.keys.click = true;
-    };
-
-    Controls.prototype._onMouseUp = function() {
-        console.log('onmouseup');
-        this.keys.click = false;
-    };
-    */
 
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
