@@ -34,28 +34,6 @@
   background: blue;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\0000314}}
-.test.active {
-  -webkit-animation-name: move-player-animation;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-out;
-  -webkit-animation-delay: 0;
-  -webkit-animation-direction: normal;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes move-player-animation {
-  0% {
-    -webkit-transform: translate(0, 0);
-  }
-  80% {
-    -webkit-transform: translate(0, -10em);
-  }
-  100% {
-    -webkit-transform: translate(0, -8em);
-  }
-}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
 .Scoreboard {
   position: absolute;
