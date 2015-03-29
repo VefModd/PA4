@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/main\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/main\.scss}line{font-family:\000037}}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -6,7 +6,7 @@
   padding: 0.2em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\000034}}
 .GameCanvas {
   font-size: 10px;
   position: absolute;
@@ -18,13 +18,33 @@
   margin-top: -28.8em;
   overflow: hidden;
   background: red;
-  background-image: url("../images/ground.png"), url("../images/skyline.png");
-  background-position: bottom left, bottom left;
-  background-repeat: repeat-x, repeat-x;
-  background-size: auto, cover;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\0000327}}
+.Background {
+  width: inherit;
+  height: inherit;
+  background-image: url("../images/skyline.png");
+  background-position: 0px 0px;
+  background-size: 621px 100%;
+  background-repeat: repeat-x;
+  animation: animatedBackground 10s linear infinite;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes animatedBackground {
+  /* line 40, _game-canvas.scss */
+  from {
+    background-position: 0 0;
+  }
+
+  /* line 41, _game-canvas.scss */
+  to {
+    background-position: 621px 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\000032}}
 .Player {
   position: absolute;
   top: 0;
@@ -34,7 +54,7 @@
   background: blue;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\0000314}}
 .test.active {
   -webkit-animation-name: move-player-animation;
   -webkit-animation-duration: 0.5s;
@@ -46,17 +66,23 @@
 }
 
 @-webkit-keyframes move-player-animation {
+  /* line 25, _player.scss */
   0% {
     -webkit-transform: translate(0, 0);
   }
+
+  /* line 28, _player.scss */
   80% {
     -webkit-transform: translate(0, -10em);
   }
+
+  /* line 31, _player.scss */
   100% {
     -webkit-transform: translate(0, -8em);
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
 .Scoreboard {
   position: absolute;
   left: 50%;
@@ -74,12 +100,12 @@
 /**
  * Reset transform to animate it into the correct spot on the screen.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000322}}
 .Scoreboard.is-visible {
   transform: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000326}}
 .Scoreboard-restart {
   margin-top: 20em;
   font-size: inherit;
@@ -89,14 +115,14 @@
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000336}}
 .Scoreboard-restartText {
   font-family: 'Comic Sans MS', serif;
   font-size: 2.4em;
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_mute\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_mute\.scss}line{font-family:\000031}}
 .MuteButton {
   position: absolute;
   top: 1em;
