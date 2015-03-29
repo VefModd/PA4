@@ -32,8 +32,8 @@
     background-size: 621px 100%;
     background-repeat: repeat-x;
 
-    animation: animatedBackground 10s linear infinite;
-    animation-direction: reverse;
+    -webkit-animation: animatedBackground 10s linear infinite;
+    -webkit-animation-direction: reverse;
 }
 
 @-webkit-keyframes animatedBackground {

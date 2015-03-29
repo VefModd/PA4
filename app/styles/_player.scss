@@ -7,28 +7,7 @@
     left: 0;
     width: em(50px);
     height: em(50px);
+    transition: all 0.2s;
 
     background: blue;
-}
-
-.test.active {
-    -webkit-animation-name: move-player-animation;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-timing-function: ease-out;
-    -webkit-animation-delay: 0;
-    -webkit-animation-direction: normal;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes move-player-animation {
-    0% {
-        -webkit-transform: translate(0, 0);
-    }
-    80% {
-        -webkit-transform: translate(0, -10em);
-    }
-    100% {
-        -webkit-transform: translate(0, -8em);
-    }
 }
