@@ -50,6 +50,26 @@
   background: blue;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\000032}}
+.PipeDown1 .PipeDown2 .PipeDown3 {
+  position: absolute;
+  bottom: 5em;
+  left: 5em;
+  width: 10em;
+  height: 20em;
+  background: green;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\0000312}}
+.PipeUp1 .PipeUp2 .PipeUp3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10em;
+  height: 20em;
+  background: blue;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
 .Scoreboard {
   position: absolute;

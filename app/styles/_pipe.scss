@@ -1,10 +1,20 @@
 
-.Pipe {
+.PipeDown1 .PipeDown2 .PipeDown3 {
     position: absolute;
-    top: 30;
-    left: 25;
-    width: em(30px);
-    height: em(30px);
+    bottom: em(50px);
+    left: em(50px);
+    width: em(100px);
+    height: em(200px);
 
     background: green;
+}
+
+.PipeUp1 .PipeUp2 .PipeUp3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em(100px);
+    height: em(200px);
+
+    background: blue;
 }
