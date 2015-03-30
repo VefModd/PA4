@@ -29,6 +29,7 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
         if(Controls.keys.mousedown || Controls.keys.touchstart || Controls.keys.space) {
             //this.pos.y -= 3;
+            document.getElementById('Flapp').play();
             this.pos.y -= delta * SPEED + 1.5;
         }
         else {
@@ -47,6 +48,7 @@ window.Player = (function() {
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+            document.getElementById('End').play();
 			return this.game.gameover();
 		}
 	};
