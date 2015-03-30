@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/main\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/main\.scss}line{font-family:\000037}}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -6,7 +6,7 @@
   padding: 0.2em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\000034}}
 .GameCanvas {
   font-size: 10px;
   position: absolute;
@@ -20,7 +20,7 @@
   background: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\0000327}}
 .Background {
   width: inherit;
   height: inherit;
@@ -40,7 +40,7 @@
     background-position: 621px 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_player\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_player\.scss}line{font-family:\000032}}
 .Player {
   position: absolute;
   top: 0;
@@ -50,6 +50,7 @@
   background: blue;
 }
 
+<<<<<<< HEAD
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\000032}}
 .PipeDown1 .PipeDown2 .PipeDown3 {
   position: absolute;
@@ -71,6 +72,9 @@
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
+=======
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\000032}}
+>>>>>>> e32cae2d4589d3167162bc0b7df9feeaac5b7f1a
 .Scoreboard {
   position: absolute;
   left: 50%;
@@ -88,12 +92,12 @@
 /**
  * Reset transform to animate it into the correct spot on the screen.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000322}}
 .Scoreboard.is-visible {
   transform: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000326}}
 .Scoreboard-restart {
   margin-top: 20em;
   font-size: inherit;
@@ -103,14 +107,14 @@
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_scoreboard\.scss}line{font-family:\0000336}}
 .Scoreboard-restartText {
   font-family: 'Comic Sans MS', serif;
   font-size: 2.4em;
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_mute\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nonni\/Documents\/GitRepos\/PA4\/app\/styles\/_mute\.scss}line{font-family:\000031}}
 .MuteButton {
   position: absolute;
   top: 1em;
