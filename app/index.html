@@ -28,9 +28,21 @@
             <div class="Foreground"></div>
             <div class="Background"></div>
             <div class="Player"></div>
+            <div class="Pipe PipeUp1"></div>
+            <div class="Pipe PipeDown1"></div>
+            <div class="Pipe PipeUp2"></div>
+            <div class="Pipe PipeDown2"></div>
+            <!--
+            <div class="Pipe PipeUp3"></div>
+            <div class="Pipe PipeDown3"></div>
+            -->
             <div class="Scoreboard">
+                <label for="Score">Score: </label>
+                <span id="Score" class="Scoreboard-Score">10</span>
+                <label for="HighScore">High Score: </label>
+                <span id="HighScore" class="Scoreboard-HighScore">56</span>
                 <button class="Scoreboard-restart">
-                    <span class="Scoreboard-restartText">Restart</span>
+                    <span class="Scoreboard-restartText">Play</span>
                 </button>
             </div>
         </div>
@@ -39,11 +51,19 @@
             <i id="mute" class="fa fa-volume-up fa-2x"></i>
         </div>
 
+        <div>
+            <audio id="End" src="audio/Crash.m4a" preload="auto">
+                <p>Your browser does not support the <code>audio</code> element </p>
+            </audio>
 
-        <audio src="audio/gmtot.mp3" preload="auto" loop>
-        <p>Your browser does not support the <code>audio</code> element </p>
-        </audio>
+            <audio id="Flapp" src="audio/Yell.m4a" preload="auto">
+                <p>Your browser does not support the <code>audio</code> element </p>
+            </audio>
 
+            <audio id="Music" src="audio/gmtot.mp3" preload="auto" autoplay loop>
+                <p>Your browser does not support the <code>audio</code> element </p>
+            </audio>
+        </div>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -56,6 +76,7 @@
         <script src="scripts/game.js"></script>
         <script src="scripts/player.js"></script>
         <script src="scripts/utils.js"></script>
+        <script src="scripts/pipe.js"></script>
         <!-- endbuild -->
     </body>
 </html>

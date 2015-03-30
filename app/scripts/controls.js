@@ -11,7 +11,8 @@ window.Controls = (function() {
         38: 'up',
         39: 'right',
         40: 'down',
-        click: false
+        500: 'touchstart',
+        600: 'mousedown'
     };
 
     /**
@@ -27,27 +28,45 @@ window.Controls = (function() {
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this))
-            .on('click', this._onClick.bind(this));
-            //.on('mousedown', this._onMouseDown.bind(this))
-            //.on('mouseup', this._onMouseUp.bind(this));
+            .on('touchstart', this._onTouchStart(this))
+            .on('touchend', this._onTouchEnd(this))
+            .on('mousedown', this._onMouseDown.bind(this))
+            .on('mouseup', this._onMouseUp.bind(this));
     };
 
-    Controls.prototype._onClick = function() {
-        this._didJump = true;
-        this.keys.click = true;
+    Controls.prototype._onTouchStart = function(e) {
+        // Only jump if space wasn't pressed.
+        if (e.keyCode === 500 && !this.keys.touchstart) {
+            this._didJump = true;
+        }
+
+        var keyName = 'touchstart';
+        this.keys[keyName] = true;
+        return false;
     };
-    /*
-    Controls.prototype._onMouseDown = function() {
-        console.log('onmousedown');
-        this._didJump = true;
-        this.keys.click = true;
+
+    Controls.prototype._onTouchEnd = function() {
+        var keyName = 'touchstart';
+        this.keys[keyName] = false;
+        return false;
+    };
+
+    Controls.prototype._onMouseDown = function(e) {
+        // Only jump if space wasn't pressed.
+        if (e.keyCode === 600 && !this.keys.mousedown) {
+            this._didJump = true;
+        }
+
+        var keyName = 'mousedown';
+        this.keys[keyName] = true;
+        return false;
     };
 
     Controls.prototype._onMouseUp = function() {
-        console.log('onmouseup');
-        this.keys.click = false;
+        var keyName = 'mousedown';
+        this.keys[keyName] = false;
+        return false;
     };
-    */
 
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
