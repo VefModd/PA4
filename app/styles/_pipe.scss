@@ -1,23 +1,26 @@
+.Pipe {
+    position: absolute;
+    width: em(75px);
+    right: 0;
+
+    background-image: url("../images/ice.jpg");
+    background-position: 0px 0px;
+    background-repeat: repeat-y;
+    background-size: em(75px) em(75px);
+
+    box-shadow: em(5px) em(5px) em(9px) rgba(0,0,0,0.75);
+}
+
 .PipeDown1,
 .PipeDown2,
 .PipeDown3 {
-    position: absolute;
+    @extend .Pipe;
     bottom: 0;
-    right: 0;
-    width: em(100px);
-    height: em(200px);
-
-    background: green;
 }
 
 .PipeUp1,
 .PipeUp2,
 .PipeUp3 {
-    position: absolute;
+    @extend .Pipe;
     top: 0;
-    right: 0;
-    width: em(100px);
-    height: em(200px);
-
-    background: blue;
 }
