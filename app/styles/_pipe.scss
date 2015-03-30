@@ -1,8 +1,7 @@
-
 .PipeDown1 {
     position: absolute;
-    bottom: em(50px);
-    left: em(50px);
+    bottom: 0;
+    right: 0;
     width: em(100px);
     height: em(200px);
 
@@ -12,7 +11,7 @@
 .PipeUp1 {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: em(100px);
     height: em(200px);
 

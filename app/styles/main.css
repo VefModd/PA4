@@ -50,21 +50,21 @@
   background: blue;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\000031}}
 .PipeDown1 {
   position: absolute;
-  bottom: 5em;
-  left: 5em;
+  bottom: 0;
+  right: 0;
   width: 10em;
   height: 20em;
   background: green;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/danielbenediktsson\/Desktop\/HR\/Vor\%202015\/Veff2\/Verkefni\/PA4\/PA4\/app\/styles\/_pipe\.scss}line{font-family:\0000311}}
 .PipeUp1 {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 10em;
   height: 20em;
   background: blue;
