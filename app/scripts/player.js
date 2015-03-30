@@ -58,10 +58,18 @@ window.Player = (function() {
             console.log('width: ', pipeWidth);
             */
             var pipeX = this.game.pipe.pipes[i].top.pos.x - pipeWidth;
+            var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
 
             // between x-coord
-            if((pipeX > 0 && pipeX < this.game.WORLD_WIDTH && pipeX < (this.pos.x + WIDTH) && (pipeX > this.pos.x - WIDTH))) {
-                console.log('first check true');
+            if((pipeX > 0) &&
+                (pipeX < this.game.WORLD_WIDTH) &&
+                (pipeX < (this.pos.x + WIDTH)) &&
+                (pipeX > this.pos.x - WIDTH) &&
+                (this.pos.y < height1)) {
+                console.log('gameover!!');
+                console.log('i: ', i);
+                //return this.game.gameover();
+                //console.log('first check true');
                 //console.log('i: ', i);
                 //console.log(this.game.pipe.pipes[i]);
                 //var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
@@ -81,6 +89,7 @@ window.Player = (function() {
                 */
             }
             else {
+                //console.log('i: ', i);
                 console.log('first check FALSE');
             }
 
