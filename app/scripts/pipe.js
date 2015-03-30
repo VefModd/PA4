@@ -19,42 +19,57 @@ window.Pipe = (function() {
             {
                 top: new NewPipe(this.el.find('.PipeUp2'), this.game.WORLD_WIDTH / 2, 0),
                 bottom: new NewPipe(this.el.find('.PipeDown2'), this.game.WORLD_WIDTH / 2, 0)
-            }
-            /*
+            },
             {
-                top: new NewPipe(this.el.find('.PipeUp3'), 0, 0),
-                bottom: new NewPipe(this.el.find('.PipeDown3'), 0, 0)
+                top: new NewPipe(this.el.find('.PipeUp3'), this.game.WORLD_WIDTH, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown3'), this.game.WORLD_WIDTH, 0)
             }
-            */
         ];
     };
 
     Pipe.prototype.reset = function() {
-        this.pipes[0].top.pos.x = 0;
-        this.pipes[0].bottom.pos.x = 0;
-        var upperHeight = getRandomHeight();
-        var downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
+        for(var i = 0; i < this.pipes.length; i++) {
+            this.pipes[i].top.pos.x = (this.game.WORLD_WIDTH / 2) * i;
+            this.pipes[i].bottom.pos.x = (this.game.WORLD_WIDTH / 2) * i;
+        }
 
-        this.el[0].style.height = upperHeight + 'em';
-        this.el[1].style.height = downHeight + 'em';
+        var upperHeight;
+        var downHeight;
+        for(i = 0; i < this.pipes.length * 2; i = i + 2) {
+            upperHeight = getRandomHeight();
+            downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
+
+            this.el[i].style.height = upperHeight + 'em';
+            this.el[i + 1].style.height = downHeight + 'em';
+        }
     };
 
     Pipe.prototype.onFrame = function(delta) {
-        this.pipes[0].top.pos.x -= delta * SPEED;
-        this.pipes[0].bottom.pos.x -= delta * SPEED;
-
-        if((this.pipes[0].bottom.pos.x * -1) > this.game.WORLD_WIDTH) {
-            this.pipes[0].top.pos.x = 10;
-            this.pipes[0].bottom.pos.x = 10;
-
-            var upperHeight = getRandomHeight();
-            var downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
-            this.el[0].style.height = upperHeight + 'em';
-            this.el[1].style.height = downHeight + 'em';
+        for(var i = 0; i < this.pipes.length; i++) {
+            this.pipes[i].top.pos.x -= delta * SPEED;
+            this.pipes[i].bottom.pos.x -= delta * SPEED;
         }
 
-        this.el.css('transform', 'translate(' + this.pipes[0].top.pos.x + 'em, ' + this.pipes[0].top.pos.y + 'em)');
-        this.el.css('transform', 'translate(' + this.pipes[0].bottom.pos.x + 'em, ' + this.pipes[0].bottom.pos.y + 'em)');
+        var upperHeight;
+        var downHeight;
+
+        for(i = 0; i < this.pipes.length; i++) {
+            if((this.pipes[i].bottom.pos.x * -1) > this.game.WORLD_WIDTH) {
+                this.pipes[i].top.pos.x = this.game.WORLD_WIDTH / 2;
+                this.pipes[i].bottom.pos.x = this.game.WORLD_WIDTH / 2;
+
+                upperHeight = getRandomHeight();
+                downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
+                this.el[2 * i].style.height = upperHeight + 'em';
+                this.el[2* i + 1].style.height = downHeight + 'em';
+            }
+
+        }
+
+        for(i = 0; i < this.pipes.length; i++) {
+            this.el[2 * i].style.transform = 'translate(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em)';
+            this.el[2 * i + 1].style.transform = 'translate(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em)';
+        }
     };
 
     function getRandomHeight() {
