@@ -25,97 +25,36 @@
     // Some graphics
     //background: red;
 }
-/*
+
 .Background{
-    width: inherit;
-    height: inherit;
-    background-image: url("../images/skyline.png");
-    background-position: 0px 0px;
-    background-size: 621px 100%;
-    background-repeat: repeat-x;
-    z-index: 100;
-
-    -webkit-animation: animatedBackground 10s linear infinite;
-    -webkit-animation-direction: reverse;
-}
-
-.Foreground{
-    width: inherit;
-    height: inherit;
-    background-image: url("../images/ground.png");
-    background-position: 0px 0px;
-    background-size: 621px 100%;
-    background-repeat: repeat-x;
-    z-index: 200;
-
-    -webkit-animation: animatedForeground 10s linear infinite;
-    -webkit-animation-direction: reverse;
-}
-
-*/
-
-/*
-.Foreground, .Background {
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: 0; left: 0;
-    -webkit-transform: translate3d(0,0,0);
-    -webkit-animation-direction: reverse;
-}
-
-.Foreground {
-    -webkit-animation: animatedForeground linear 10s infinite both;
-    background:  url(../images/ground.png) 0 100% repeat-x;
-    z-index: 3;
-}
-
-@-webkit-keyframes animatedForeground {
-    0% { background-position: -638px 100%; }
-    100% { background-position: 0 100%; }
-}
-
-.Background {
-    background-image: url(../images/skyline.png);
+    background-image: url("../images/thewallfinal.png");
     background-repeat: repeat-x;
-    background-position: 0 100%;
-    z-index: 1;
-    -webkit-animation: animatedBackground linear 40s infinite;
-}
-
-@-webkit-keyframes animatedBackground {
-    from { background-position: 0 0; }
-    to { background-position: 621px 0; }
-}
-*/
-
-.Background{
-    position: relative;
-    background-image: url("../images/skyline.png");
-    background-repeat: repeat-x;
-    height: em(500px);
+    height: 100%;
     width: em(2048px);
-    -webkit-animation: animatedBackground linear 10s infinite;
+    top: 0;
+    left: 0;
+    -webkit-animation: animatedBackground linear 20s infinite;
 }
 
 .Foreground{
-    position: relative;
-    bottom: em(-487px);
-    background-image: url("../images/ground.png");
+    position: absolute;
+    bottom: em(-58px);
+    background-image: url("../images/icy.png");
     background-repeat: repeat-x;
     width: em(1800px);
     height: em(100px);
     z-index: 100;
-    -webkit-animation: animatedForeground linear 5s infinite;
+    -webkit-animation: animatedForeground linear 3s infinite;
 }
 
 @-webkit-keyframes animatedBackground {
     from { background-position: 0 0; }
-    to { background-position: -621px 0; }
+    to { background-position: -2000px 0; }
 }
 
 @-webkit-keyframes animatedForeground {
     from { background-position: 0 0; }
-    to { background-position: -638px 0; }
+    to { background-position: -114px 0; }
 }
 
