@@ -20,8 +20,7 @@ var flapp = document.getElementsByTagName('Audio')[1];
 var end = document.getElementsByTagName('Audio')[2];
 var muteButton = document.getElementById('mute');
 
-muteButton.style.cursor = 'pointer';
-muteButton.onclick = function() {
+var muteSounds = function() {
     'use strict';
     if(music.volume === 0) {
         $('#mute').toggleClass('fa-volume-up');
@@ -37,3 +36,10 @@ muteButton.onclick = function() {
         end.volume = 0;
     }
 };
+
+muteButton.style.cursor = 'pointer';
+muteButton.onclick = function () {
+    'use strict';
+    muteSounds();
+};
+muteSounds();
