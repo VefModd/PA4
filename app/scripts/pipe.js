@@ -13,10 +13,19 @@ window.Pipe = (function() {
         this.game = game;
         this.pipes = [
             {
-                name: 'FirstPipe',
                 top: new NewPipe(this.el.find('.PipeUp1'), 0, 0),
                 bottom: new NewPipe(this.el.find('.PipeDown1'), 0, 0)
+            },
+            {
+                top: new NewPipe(this.el.find('.PipeUp2'), this.game.WORLD_WIDTH / 2, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown2'), this.game.WORLD_WIDTH / 2, 0)
             }
+            /*
+            {
+                top: new NewPipe(this.el.find('.PipeUp3'), 0, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown3'), 0, 0)
+            }
+            */
         ];
     };
 
@@ -26,8 +35,8 @@ window.Pipe = (function() {
         var upperHeight = getRandomHeight();
         var downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
 
-		this.el[0].style.height = upperHeight + 'em';
-		this.el[1].style.height = downHeight + 'em';
+        this.el[0].style.height = upperHeight + 'em';
+        this.el[1].style.height = downHeight + 'em';
     };
 
     Pipe.prototype.onFrame = function(delta) {
@@ -35,8 +44,8 @@ window.Pipe = (function() {
         this.pipes[0].bottom.pos.x -= delta * SPEED;
 
         if((this.pipes[0].bottom.pos.x * -1) > this.game.WORLD_WIDTH) {
-            this.pipes[0].top.pos.x = 5;
-            this.pipes[0].bottom.pos.x = 5;
+            this.pipes[0].top.pos.x = 10;
+            this.pipes[0].bottom.pos.x = 10;
 
             var upperHeight = getRandomHeight();
             var downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
@@ -44,8 +53,8 @@ window.Pipe = (function() {
             this.el[1].style.height = downHeight + 'em';
         }
 
-		this.el.css('transform', 'translate(' + this.pipes[0].top.pos.x + 'em, ' + this.pipes[0].top.pos.y + 'em)');
-		this.el.css('transform', 'translate(' + this.pipes[0].bottom.pos.x + 'em, ' + this.pipes[0].bottom.pos.y + 'em)');
+        this.el.css('transform', 'translate(' + this.pipes[0].top.pos.x + 'em, ' + this.pipes[0].top.pos.y + 'em)');
+        this.el.css('transform', 'translate(' + this.pipes[0].bottom.pos.x + 'em, ' + this.pipes[0].bottom.pos.y + 'em)');
     };
 
     function getRandomHeight() {
