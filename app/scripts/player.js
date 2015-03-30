@@ -46,8 +46,8 @@ window.Player = (function() {
 	};
 
     Player.prototype.checkCollisionWithPipes = function() {
-        //var pipeWidth = 7.5;
-        //for(var i = 0; i < this.game.pipe.pipes.length; i++) {
+        var pipeWidth = 7.5;
+        for(var i = 0; i < this.game.pipe.pipes.length; i++) {
             /*
             console.log('this.el: ', this.game.pipe.el);
             console.log('xcoord: ', this.game.pipe.pipes[i].top.pos.x);
@@ -57,23 +57,34 @@ window.Player = (function() {
             console.log('height2: ', parseFloat(this.game.pipe.el[2 * i + 1].style.height));
             console.log('width: ', pipeWidth);
             */
-            //var pipeX = this.game.pipe.pipes[i].top.pos.x - pipeWidth;
+            var pipeX = this.game.pipe.pipes[i].top.pos.x - pipeWidth;
 
             // between x-coord
-            /*
-            if((pipeX > 0 && pipeX < this.game.WORLD_WIDTH && pipeX < (this.pos.x + WIDTH))) {
-                console.log(this.game.pipe.pipes[i]);
-                console.log('first check TRUE');
-                console.log('pipeX: ', pipeX);
-                console.log('this.pos.x: ', this.pos.x);
-                console.log('this.pos.y: ', this.pos.y);
+            if((pipeX > 0 && pipeX < this.game.WORLD_WIDTH && pipeX < (this.pos.x + WIDTH) && (pipeX > this.pos.x - WIDTH))) {
+                console.log('first check true');
+                //console.log('i: ', i);
+                //console.log(this.game.pipe.pipes[i]);
+                //var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
+                //console.log('height1: ', height1);
+                //console.log('this.pos.y - HEIGHT: ', this.pos.y - HEIGHT);
+                //console.log(this.game.pipe.el);
+                /*
+                if(this.pos.y < height1) {
+                    console.log('second check TRUE');
+                    console.log('height1: ', height1);
+                    console.log('this.pos.y: ', this.pos.y);
+                    return this.game.gameover();
+                }
+                else {
+                    console.log('second check FALSE');
+                }
+                */
             }
             else {
                 console.log('first check FALSE');
             }
 
         }
-        */
     };
 
 	Player.prototype.checkCollisionWithBounds = function() {
