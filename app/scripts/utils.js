@@ -15,9 +15,9 @@ if (!window.requestAnimationFrame) {
     })();
 }
 
-var music = document.getElementsById('Music')[0];
-var flapp = document.getElementsById('Flapp')[0];
-var end = document.getElementsById('End')[0];
+var music = document.getElementsByTagName('Audio')[0];
+var flapp = document.getElementsByTagName('Audio')[1];
+var end = document.getElementsByTagName('Audio')[2];
 var muteButton = document.getElementById('mute');
 
 muteButton.style.cursor = 'pointer';
