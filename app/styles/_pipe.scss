@@ -1,5 +1,5 @@
 
-.PipeDown1 .PipeDown2 .PipeDown3 {
+.PipeDown1 {
     position: absolute;
     bottom: em(50px);
     left: em(50px);
@@ -9,7 +9,7 @@
     background: green;
 }
 
-.PipeUp1 .PipeUp2 .PipeUp3 {
+.PipeUp1 {
     position: absolute;
     top: 0;
     left: 0;
