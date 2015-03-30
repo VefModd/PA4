@@ -5,7 +5,10 @@
     width: em(100px);
     height: em(200px);
 
-    background: green;
+    //background: green;
+    background-image: url("../images/ice.jpg");
+    background-position: 0px 0px;
+    background-size: 50% 50%;
 }
 
 .PipeUp1 {
