@@ -1,4 +1,6 @@
-.PipeDown1 {
+.PipeDown1,
+.PipeDown2,
+.PipeDown3 {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -11,7 +13,9 @@
     background-size: 50% 50%;
 }
 
-.PipeUp1 {
+.PipeUp1,
+.PipeUp2,
+.PipeUp3 {
     position: absolute;
     top: 0;
     right: 0;
