@@ -34,14 +34,8 @@ window.Pipe = (function() {
         this.pipes[0].top.pos.x -= delta * SPEED;
         this.pipes[0].bottom.pos.x -= delta * SPEED;
 
-        if((this.pipes[0].bottom.pos.x * -1) > this.game.WORLD_WIDTH) {
-            this.pipes[0].top.pos.x = 5;
-            this.pipes[0].bottom.pos.x = 5;
-
-            var upperHeight = getRandomHeight();
-            var downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
-            this.el[0].style.height = upperHeight + 'em';
-            this.el[1].style.height = downHeight + 'em';
+        if(this.pipes[0].bottom.x > this.game.WORLD_WIDTH) {
+            console.log('true!!');
         }
 
 		this.el.css('transform', 'translate(' + this.pipes[0].top.pos.x + 'em, ' + this.pipes[0].top.pos.y + 'em)');
