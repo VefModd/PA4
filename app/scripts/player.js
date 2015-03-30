@@ -66,7 +66,7 @@ window.Player = (function() {
                 console.log('first check TRUE');
                 console.log('pipeX: ', pipeX);
                 console.log('this.pos.x: ', this.pos.x);
-                return this.game.gameover();
+                //(return this.game.gameover();
             }
             else {
                 console.log('first check FALSE');
