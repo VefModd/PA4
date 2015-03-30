@@ -46,8 +46,8 @@ window.Player = (function() {
 	};
 
     Player.prototype.checkCollisionWithPipes = function() {
-        var pipeWidth = 7.5;
-        for(var i = 0; i < this.game.pipe.pipes.length; i++) {
+        //var pipeWidth = 7.5;
+        //for(var i = 0; i < this.game.pipe.pipes.length; i++) {
             /*
             console.log('this.el: ', this.game.pipe.el);
             console.log('xcoord: ', this.game.pipe.pipes[i].top.pos.x);
@@ -57,22 +57,23 @@ window.Player = (function() {
             console.log('height2: ', parseFloat(this.game.pipe.el[2 * i + 1].style.height));
             console.log('width: ', pipeWidth);
             */
-            var pipeX = this.game.pipe.pipes[i].top.pos.x - pipeWidth;
+            //var pipeX = this.game.pipe.pipes[i].top.pos.x - pipeWidth;
 
-            console.log(this.pos.x + WIDTH);
-            console.log('first check:');
+            // between x-coord
+            /*
             if((pipeX > 0 && pipeX < this.game.WORLD_WIDTH && pipeX < (this.pos.x + WIDTH))) {
                 console.log(this.game.pipe.pipes[i]);
                 console.log('first check TRUE');
                 console.log('pipeX: ', pipeX);
                 console.log('this.pos.x: ', this.pos.x);
-                //(return this.game.gameover();
+                console.log('this.pos.y: ', this.pos.y);
             }
             else {
                 console.log('first check FALSE');
             }
 
         }
+        */
     };
 
 	Player.prototype.checkCollisionWithBounds = function() {
