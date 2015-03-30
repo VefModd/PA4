@@ -16,31 +16,115 @@
   height: 57.6em;
   margin-left: -51.2em;
   margin-top: -28.8em;
+  background-size: contain;
   overflow: hidden;
-  background: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\0000327}}
+/*
+.Background{
+    width: inherit;
+    height: inherit;
+    background-image: url("../images/skyline.png");
+    background-position: 0px 0px;
+    background-size: 621px 100%;
+    background-repeat: repeat-x;
+    z-index: 100;
+
+    -webkit-animation: animatedBackground 10s linear infinite;
+    -webkit-animation-direction: reverse;
+}
+
+.Foreground{
+    width: inherit;
+    height: inherit;
+    background-image: url("../images/ground.png");
+    background-position: 0px 0px;
+    background-size: 621px 100%;
+    background-repeat: repeat-x;
+    z-index: 200;
+
+    -webkit-animation: animatedForeground 10s linear infinite;
+    -webkit-animation-direction: reverse;
+}
+
+*/
+/*
+.Foreground, .Background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-animation-direction: reverse;
+}
+
+.Foreground {
+    -webkit-animation: animatedForeground linear 10s infinite both;
+    background:  url(../images/ground.png) 0 100% repeat-x;
+    z-index: 3;
+}
+
+@-webkit-keyframes animatedForeground {
+    0% { background-position: -638px 100%; }
+    100% { background-position: 0 100%; }
+}
+
 .Background {
-  width: inherit;
-  height: inherit;
-  background-image: url("../images/skyline.png");
-  background-position: 0px 0px;
-  background-size: 621px 100%;
-  background-repeat: repeat-x;
-  -webkit-animation: animatedBackground 10s linear infinite;
-  -webkit-animation-direction: reverse;
+    background-image: url(../images/skyline.png);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    z-index: 1;
+    -webkit-animation: animatedBackground linear 40s infinite;
 }
 
 @-webkit-keyframes animatedBackground {
-  /* line 40, _game-canvas.scss */
+    from { background-position: 0 0; }
+    to { background-position: 621px 0; }
+}
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\0000392}}
+.Background {
+  position: relative;
+  background-image: url("../images/skyline.png");
+  background-repeat: repeat-x;
+  height: 50em;
+  width: 204.8em;
+  -webkit-animation: animatedBackground linear 10s infinite;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jorundur\/Desktop\/HR\/V2015\/VefforritunII\/PA4\/PA4\/app\/styles\/_game-canvas\.scss}line{font-family:\00003101}}
+.Foreground {
+  position: relative;
+  bottom: -48.7em;
+  background-image: url("../images/ground.png");
+  background-repeat: repeat-x;
+  width: 180em;
+  height: 10em;
+  z-index: 100;
+  -webkit-animation: animatedForeground linear 5s infinite;
+}
+
+@-webkit-keyframes animatedBackground {
+  /* line 113, _game-canvas.scss */
   from {
     background-position: 0 0;
   }
 
-  /* line 41, _game-canvas.scss */
+  /* line 114, _game-canvas.scss */
   to {
-    background-position: 621px 0;
+    background-position: -621px 0;
+  }
+}
+
+@-webkit-keyframes animatedForeground {
+  /* line 118, _game-canvas.scss */
+  from {
+    background-position: 0 0;
+  }
+
+  /* line 119, _game-canvas.scss */
+  to {
+    background-position: -638px 0;
   }
 }
 
@@ -52,6 +136,7 @@
   width: 5em;
   height: 5em;
   transition: all 0.2s;
+  z-index: 200;
   background: blue;
 }
 
