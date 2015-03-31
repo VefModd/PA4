@@ -30,15 +30,18 @@ window.Player = (function() {
         if(Controls.keys.mousedown || Controls.keys.touchstart || Controls.keys.space) {
             //this.pos.y -= 3;
             document.getElementById('Flapp').play();
+            $('.Wing').css('transform-origin', 'bottom right');
+            $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
             this.pos.y -= delta * SPEED + 1.5;
         }
         else {
             //this.pos.y += delta + 0.5;
+            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
             this.pos.y += delta * SPEED;
         }
 
 		// Update UI
-		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
 
         this.checkCollisionWithBounds();
 

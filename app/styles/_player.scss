@@ -8,5 +8,7 @@
     width: em(50px);
     height: em(50px);
     z-index: 200;
-    background: blue;
+    background-image: url(../images/ned.png);
+    background-size: 100% 100%;
+    transform: translate3d(0, 0, 0);
 }

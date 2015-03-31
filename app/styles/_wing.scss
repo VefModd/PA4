@@ -1,0 +1,9 @@
+.Wing {
+    top: em(-55px);
+    left: em(-40px);
+    height: em(100px);
+    position: relative;
+    background-image: url(../images/wing.png);
+    //transform: translate3d(0, 0, 0);
+    background-size: 100% 100%;
+}
