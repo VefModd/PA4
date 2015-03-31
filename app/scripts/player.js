@@ -11,59 +11,12 @@ window.Player = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
+	var INITIAL_DEG = 0;
 
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
-        this.pos = { x: 0, y: 0 };
-        this.space = false;
-        this.mouse = false;
-        this.touch = false;
-        this.nextPipe = 'firstPipe';
-        this.score = 0;
-
-        $(window).on('keydown', function(e) {
-            if(e.keyCode === 32 && !this.space) {
-                SPEED = SPEED - 40;
-                document.getElementById('Flapp').play();
-                $('.Wing').css('transform-origin', 'bottom right');
-                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
-                this.space = true;
-            }
-        });
-        $(window).on('keyup', function() {
-            this.space = false;
-            SPEED = SPEED / 2;
-            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
-        });
-        $(window).on('mousedown', function() {
-            if(!this.mouse) {
-                SPEED = SPEED - 40;
-                document.getElementById('Flapp').play();
-                $('.Wing').css('transform-origin', 'bottom right');
-                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
-                this.mouse = true;
-            }
-        });
-        $(window).on('mouseup', function() {
-            this.mouse = false;
-            SPEED = SPEED / 2;
-            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
-        });
-        $(window).on('touchstart', function() {
-            if(!this.touch) {
-                SPEED = SPEED - 40;
-                document.getElementById('Flapp').play();
-                $('.Wing').css('transform-origin', 'bottom right');
-                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
-                this.touch = true;
-            }
-        });
-        $(window).on('touchend', function() {
-            this.touch = false;
-            SPEED = SPEED / 2;
-            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
-        });
+        this.pos = { x: 0, y: 0, deg: 0 };
 	};
 
 	/**
@@ -72,17 +25,24 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+        this.pos.deg = INITIAL_DEG;
 	    SPEED = 0;
         this.nextPipe = 'firstPipe';
         this.score = 0;
 	};
 
+
 	Player.prototype.onFrame = function(delta) {
         SPEED = SPEED + GRAVITY;
         this.pos.y += delta * SPEED;
+        if(this.pos.deg < 90) {
+            this.pos.deg += delta * (SPEED * 4);
+        } else {
+            this.pos.deg = 90;
+        }
 
 		// Update UI
-		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
+		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.pos.deg + 'deg)');
 
         this.checkCollisionWithBounds();
         this.checkCollisionWithPipes();
@@ -105,6 +65,7 @@ window.Player = (function() {
                 else if(this.game.pipe.pipes[i].name === this.nextPipe) {
                     this.score++;
                     this.nextPipe = this.game.pipe.pipes[(i + 1) % this.game.pipe.pipes.length].name;
+                    $('.GameScore').html(this.score);
                 }
             }
         }
@@ -118,6 +79,20 @@ window.Player = (function() {
 			return this.game.gameover();
 		}
 	};
+
+    Player.prototype.startFlapp = function() {
+        this.pos.deg = -25;
+        SPEED = SPEED - 40;
+        document.getElementById('Flapp').play();
+        $('.Wing').css('transform-origin', 'bottom right');
+        $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
+    };
+
+    Player.prototype.endFlapp = function() {
+        SPEED = SPEED / 2;
+        $('.Wing').css('transform', 'translateZ(0) rotate(0)');
+    };
+
 
 	return Player;
 
