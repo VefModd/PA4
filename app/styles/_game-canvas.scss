@@ -48,6 +48,16 @@
     -webkit-animation: animatedForeground linear 1.15s infinite;
 }
 
+.GameScore {
+    position: absolute;
+    font-size: em(40px);
+    font-family: serif;
+    color: red;
+    margin-left: 50%;
+    margin-top: 2%;
+    z-index: 300;
+}
+
 @-webkit-keyframes animatedBackground {
     from { -webkit-transform: translate3d(0, 0, 0); }
     to { -webkit-transform: translate3d(em(-2000px), 0, 0); }

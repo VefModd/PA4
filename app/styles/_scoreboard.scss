@@ -2,13 +2,14 @@
 .Scoreboard {
 	position: absolute;
 	left: 50%;
-	top: em(100px);
-	height: em(300px);
-	width: em(400px);
+	top: 0;
+	height: em(400px);
+	width: em(600px);
 	margin-left: em(-200px);
 	box-sizing: border-box;
 
-	background: purple;
+	background-image: url(../images/ironthrone.png);
+    background-size: 100% 100%;
 	text-align: center;
 
 	// Keep it off-screen
@@ -24,7 +25,9 @@
 }
 
 .Scoreboard-restart {
-	margin-top: em(200px);
+    position: absolute;
+    margin-top: 55%;
+    margin-left: -16%;
 
 	font-size: inherit;
 	padding: em(4px) em(15px);

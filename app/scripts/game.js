@@ -12,7 +12,8 @@ window.Game = (function() {
         this.player = new window.Player(this.el.find('.Player'), this);
         this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
         console.log('this: ', this);
-        this.isPlaying = false;
+		this.isPlaying = false;
+        this.highscore = 0;
 
 
 
@@ -69,10 +70,19 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+        if(this.highscore < this.player.score) {
+            this.highscore = this.player.score;
+        }
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
+        var score = $('#Score');
+        var highscore = $('#HighScore');
+        score.text(this.player.score);
+        highscore.text(this.highscore);
+        console.log('score: ', score);
+
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')

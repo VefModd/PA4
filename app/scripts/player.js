@@ -17,7 +17,6 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
         this.pos = { x: 0, y: 0, deg: 0 };
-
 	};
 
 	/**
@@ -28,6 +27,8 @@ window.Player = (function() {
 		this.pos.y = INITIAL_POSITION_Y;
         this.pos.deg = INITIAL_DEG;
 	    SPEED = 0;
+        this.nextPipe = 'firstPipe';
+        this.score = 0;
 	};
 
 
@@ -57,11 +58,16 @@ window.Player = (function() {
             var height2 = parseFloat(this.game.pipe.el[2 * i + 1].style.height);
 
             if((pipeX <= this.pos.x + WIDTH) &&
-                (pipeX + pipeWidth >= this.pos.x) &&
-                ((this.pos.y <= height1) ||
-                ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2)))) {
-                document.getElementById('End').play();
-                return this.game.gameover();
+                (pipeX + pipeWidth >= this.pos.x)) {
+                if((this.pos.y <= height1) || ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2))) {
+                    document.getElementById('End').play();
+                    return this.game.gameover();
+                }
+                else if(this.game.pipe.pipes[i].name === this.nextPipe) {
+                    this.score++;
+                    this.nextPipe = this.game.pipe.pipes[(i + 1) % this.game.pipe.pipes.length].name;
+                    $('.GameScore').html(this.score);
+                }
             }
         }
     };
@@ -69,7 +75,7 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+			this.pos.y + HEIGHT  + 4.7 > this.game.WORLD_HEIGHT) {
             document.getElementById('End').play();
 			return this.game.gameover();
 		}
