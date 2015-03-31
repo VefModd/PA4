@@ -113,7 +113,7 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+			this.pos.y + HEIGHT  + 4.7 > this.game.WORLD_HEIGHT) {
             document.getElementById('End').play();
 			return this.game.gameover();
 		}
