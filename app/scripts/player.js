@@ -63,17 +63,15 @@ window.Player = (function() {
         for(var i = 0; i < this.game.pipe.pipes.length; i++) {
             var pipeX = this.game.pipe.pipes[i].bottom.pos.x;
             var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
+            var height2 = parseFloat(this.game.pipe.el[2 * i + 1].style.height);
 
             if((pipeX <= this.pos.x + WIDTH) &&
-                (pipeX + pipeWidth >= this.pos.x + WIDTH) &&
-                (this.pos.y < height1)) {
-                console.log('first check true');
+                (pipeX + pipeWidth >= this.pos.x) &&
+                ((this.pos.y <= height1) ||
+                ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2)))) {
+                document.getElementById('End').play();
                 return this.game.gameover();
             }
-            else {
-                console.log('first check FALSE');
-            }
-
         }
     };
 
