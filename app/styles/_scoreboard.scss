@@ -23,7 +23,7 @@ label[for=Score] {
     margin-top: 25%;
     margin-left: -7%;
 	font-family: 'Comic Sans MS', serif;
-	color: white;
+	color: red;
 }
 
 .Scoreboard-Score {
@@ -32,7 +32,7 @@ label[for=Score] {
     margin-top: 31%;
     margin-left: -1%;
 	font-family: 'Comic Sans MS', serif;
-	color: white;
+	color: red;
 }
 
 label[for=HighScore] {
@@ -41,7 +41,7 @@ label[for=HighScore] {
     margin-top: 37%;
     margin-left: -13%;
 	font-family: 'Comic Sans MS', serif;
-	color: white;
+	color: red;
 }
 
 .Scoreboard-HighScore {
@@ -50,7 +50,7 @@ label[for=HighScore] {
     margin-top: 43%;
     margin-left: -1%;
 	font-family: 'Comic Sans MS', serif;
-	color: white;
+	color: red;
 }
 
 /**
@@ -67,7 +67,7 @@ label[for=HighScore] {
 
 	font-size: inherit;
 	padding: em(4px) em(15px);
-	border: em(2px) solid white;
+	border: em(2px) solid red;
 	background: none;
 	cursor: pointer;
 }
@@ -76,5 +76,5 @@ label[for=HighScore] {
 	// NOTICE: You'll lose 10% of your score if you don't change this style!
 	font-family: 'Comic Sans MS', serif;
 	font-size: em(24px);
-	color: white;
+	color: red;
 }
