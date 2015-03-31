@@ -58,6 +58,8 @@ window.Game = (function() {
 	 * Resets the state of the game so a new game can be started.
 	 */
 	Game.prototype.reset = function() {
+        $('.Foreground').css('webkitAnimationPlayState', 'running');
+        $('.Background').css('webkitAnimationPlayState', 'running');
 		this.player.reset();
         this.pipe.reset();
 	};
@@ -86,6 +88,9 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+        $('.Foreground').css('webkitAnimationPlayState', 'paused');
+        $('.Background').css('webkitAnimationPlayState', 'paused');
+        //document.getElementsByClassName('Foreground').style.webkitAnimationPlayState = 'paused';
 	};
 
 	/**
