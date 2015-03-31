@@ -7,16 +7,19 @@ window.Game = (function() {
 	 * @param {Element} el jQuery element containing the game.
 	 * @constructor
 	 */
-	var Game = function(el) {
-		this.el = el;
-		this.player = new window.Player(this.el.find('.Player'), this);
+    var Game = function(el) {
+        this.el = el;
+        this.player = new window.Player(this.el.find('.Player'), this);
         this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
         console.log('this: ', this);
-		this.isPlaying = false;
+        this.isPlaying = false;
 
-		// Cache a bound onFrame since we need it each frame.
-		this.onFrame = this.onFrame.bind(this);
-	};
+
+
+
+        // Cache a bound onFrame since we need it each frame.
+        this.onFrame = this.onFrame.bind(this);
+    };
 
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
