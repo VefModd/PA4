@@ -16,20 +16,21 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
         this.pos = { x: 0, y: 0 };
+        this.space = false;
+
         $(window).on('keydown', function(e) {
-            if(e.keyCode === 32) {
+            if(e.keyCode === 32 && !this.space) {
                 SPEED = SPEED - 40;
                 document.getElementById('Flapp').play();
                 $('.Wing').css('transform-origin', 'bottom right');
                 $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
-                //console.log('inside keydown');
-                return true;
+                this.space = true;
             }
         });
-        $(window).on('keyup', function(e) {
-            if(e.keyCode === 32) {
-                $('.Wing').css('transform', 'translateZ(0) rotate(0)');
-            }
+        $(window).on('keyup', function() {
+            this.space = false;
+            SPEED = SPEED / 2;
+            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
         });
 	};
 
@@ -70,28 +71,16 @@ window.Player = (function() {
         var pipeWidth = 7.5;
         for(var i = 0; i < this.game.pipe.pipes.length; i++) {
             var pipeX = this.game.pipe.pipes[i].bottom.pos.x;
-            //var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
-                
-            /*
-            var CONST = 24.8;
-            if((-pipeX - CONST >= this.pos.x + WIDTH) &&
-                ((-pipeX - pipeWidth - CONST) <= this.pos.x + WIDTH) &&
-                (this.pos.y < height1)) {
-                */
-            if((-pipeX >= this.pos.x + WIDTH) &&
-                ((-pipeX - pipeWidth) <= this.pos.x + WIDTH)) {
-                console.log('i: ', i);
-                console.log('first check true');
-                console.log('-pipeX: ', -pipeX);
-                console.log('-pipeX - pipeWidth: ', -pipeX - pipeWidth);
-                console.log('this.pos.x :', this.pos.x);
-                console.log('WIDTH :', WIDTH);
-                //return this.game.gameover();
-            }
-            else {
-                console.log('first check FALSE');
-            }
+            var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
+            var height2 = parseFloat(this.game.pipe.el[2 * i + 1].style.height);
 
+            if((pipeX <= this.pos.x + WIDTH) &&
+                (pipeX + pipeWidth >= this.pos.x) &&
+                ((this.pos.y <= height1) ||
+                ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2)))) {
+                document.getElementById('End').play();
+                return this.game.gameover();
+            }
         }
     };
 

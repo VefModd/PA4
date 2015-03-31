@@ -14,26 +14,26 @@ window.Pipe = (function() {
         this.pipes = [
             {
                 name: 'firstPipe',
-                top: new NewPipe(this.el.find('.PipeUp1'), 0, 0),
-                bottom: new NewPipe(this.el.find('.PipeDown1'), 0, 0)
+                top: new NewPipe(this.el.find('.PipeUp1'), this.game.WORLD_WIDTH, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown1'), this.game.WORLD_WIDTH, 0)
             },
             {
                 name: 'secondPipe',
-                top: new NewPipe(this.el.find('.PipeUp2'), this.game.WORLD_WIDTH / 2, 0),
-                bottom: new NewPipe(this.el.find('.PipeDown2'), this.game.WORLD_WIDTH / 2, 0)
+                top: new NewPipe(this.el.find('.PipeUp2'), this.game.WORLD_WIDTH + this.game.WORLD_WIDTH / 2, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown2'), this.game.WORLD_WIDTH + this.game.WORLD_WIDTH / 2, 0)
             },
             {
                 name: 'thirdPipe',
-                top: new NewPipe(this.el.find('.PipeUp3'), this.game.WORLD_WIDTH, 0),
-                bottom: new NewPipe(this.el.find('.PipeDown3'), this.game.WORLD_WIDTH, 0)
+                top: new NewPipe(this.el.find('.PipeUp3'), this.game.WORLD_WIDTH * 2, 0),
+                bottom: new NewPipe(this.el.find('.PipeDown3'), this.game.WORLD_WIDTH * 2, 0)
             }
         ];
     };
 
     Pipe.prototype.reset = function() {
         for(var i = 0; i < this.pipes.length; i++) {
-            this.pipes[i].top.pos.x = (this.game.WORLD_WIDTH / 2) * i;
-            this.pipes[i].bottom.pos.x = (this.game.WORLD_WIDTH / 2) * i;
+            this.pipes[i].top.pos.x = this.game.WORLD_WIDTH + this.game.WORLD_WIDTH * (i * 0.5);
+            this.pipes[i].bottom.pos.x = this.game.WORLD_WIDTH + this.game.WORLD_WIDTH * (i * 0.5);
         }
 
         var upperHeight;
@@ -55,11 +55,12 @@ window.Pipe = (function() {
 
         var upperHeight;
         var downHeight;
+        var pipeWidth = 7.5;
 
         for(i = 0; i < this.pipes.length; i++) {
-            if((this.pipes[i].bottom.pos.x * -1) > this.game.WORLD_WIDTH) {
-                this.pipes[i].top.pos.x = this.game.WORLD_WIDTH / 2;
-                this.pipes[i].bottom.pos.x = this.game.WORLD_WIDTH / 2;
+            if(this.pipes[i].bottom.pos.x + pipeWidth < 0) {
+                this.pipes[i].top.pos.x = this.game.WORLD_WIDTH + this.game.WORLD_WIDTH / 2;
+                this.pipes[i].bottom.pos.x = this.game.WORLD_WIDTH + this.game.WORLD_WIDTH / 2;
 
                 upperHeight = getRandomHeight();
                 downHeight = this.game.WORLD_HEIGHT - (upperHeight + GAP);
