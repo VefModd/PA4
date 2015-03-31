@@ -42,7 +42,6 @@ window.Player = (function() {
         }
 
 		// Update UI
-        console.log('moving: ', this.pos);
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.pos.deg + 'deg)');
 
         this.checkCollisionWithBounds();
@@ -82,7 +81,6 @@ window.Player = (function() {
 	};
 
     Player.prototype.startFlapp = function() {
-        console.log('flapp this: ', this);
         this.pos.deg = -25;
         SPEED = SPEED - 40;
         document.getElementById('Flapp').play();
