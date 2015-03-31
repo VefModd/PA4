@@ -13,14 +13,17 @@ window.Pipe = (function() {
         this.game = game;
         this.pipes = [
             {
+                name: 'firstPipe',
                 top: new NewPipe(this.el.find('.PipeUp1'), 0, 0),
                 bottom: new NewPipe(this.el.find('.PipeDown1'), 0, 0)
             },
             {
+                name: 'secondPipe',
                 top: new NewPipe(this.el.find('.PipeUp2'), this.game.WORLD_WIDTH / 2, 0),
                 bottom: new NewPipe(this.el.find('.PipeDown2'), this.game.WORLD_WIDTH / 2, 0)
             },
             {
+                name: 'thirdPipe',
                 top: new NewPipe(this.el.find('.PipeUp3'), this.game.WORLD_WIDTH, 0),
                 bottom: new NewPipe(this.el.find('.PipeDown3'), this.game.WORLD_WIDTH, 0)
             }
@@ -67,8 +70,8 @@ window.Pipe = (function() {
         }
 
         for(i = 0; i < this.pipes.length; i++) {
-            this.el[2 * i].style.transform = 'translate(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em)';
-            this.el[2 * i + 1].style.transform = 'translate(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em)';
+            this.el[2 * i].style.transform = 'translate3d(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em, 0em)';
+            this.el[2 * i + 1].style.transform = 'translate3d(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em, 0em)';
         }
     };
 

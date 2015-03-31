@@ -1,11 +1,12 @@
 window.Player = (function() {
 	'use strict';
 
-	var Controls = window.Controls;
+	//var Controls = window.Controls;
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
-	var SPEED = 10;
+	var SPEED = 0;
+    var GRAVITY = 1.0;
 	var WIDTH = 5;
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
@@ -15,6 +16,21 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
         this.pos = { x: 0, y: 0 };
+        $(window).on('keydown', function(e) {
+            if(e.keyCode === 32) {
+                SPEED = SPEED - 40;
+                document.getElementById('Flapp').play();
+                $('.Wing').css('transform-origin', 'bottom right');
+                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
+                //console.log('inside keydown');
+                return true;
+            }
+        });
+        $(window).on('keyup', function(e) {
+            if(e.keyCode === 32) {
+                $('.Wing').css('transform', 'translateZ(0) rotate(0)');
+            }
+        });
 	};
 
 	/**
@@ -23,29 +39,61 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
-		//this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+	    SPEED = 0;
+		//this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
 	};
 
 	Player.prototype.onFrame = function(delta) {
+        SPEED = SPEED + GRAVITY;
+        this.pos.y += delta * SPEED;
+
+        /*
         if(Controls.keys.mousedown || Controls.keys.touchstart || Controls.keys.space) {
             //this.pos.y -= 3;
-            document.getElementById('Flapp').play();
-            $('.Wing').css('transform-origin', 'bottom right');
-            $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
             this.pos.y -= delta * SPEED + 1.5;
         }
         else {
             //this.pos.y += delta + 0.5;
-            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
             this.pos.y += delta * SPEED;
         }
+        */
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
 
         this.checkCollisionWithBounds();
+        this.checkCollisionWithPipes();
 
 	};
+
+    Player.prototype.checkCollisionWithPipes = function() {
+        var pipeWidth = 7.5;
+        for(var i = 0; i < this.game.pipe.pipes.length; i++) {
+            var pipeX = this.game.pipe.pipes[i].bottom.pos.x;
+            //var height1 = parseFloat(this.game.pipe.el[2 * i].style.height);
+                
+            /*
+            var CONST = 24.8;
+            if((-pipeX - CONST >= this.pos.x + WIDTH) &&
+                ((-pipeX - pipeWidth - CONST) <= this.pos.x + WIDTH) &&
+                (this.pos.y < height1)) {
+                */
+            if((-pipeX >= this.pos.x + WIDTH) &&
+                ((-pipeX - pipeWidth) <= this.pos.x + WIDTH)) {
+                console.log('i: ', i);
+                console.log('first check true');
+                console.log('-pipeX: ', -pipeX);
+                console.log('-pipeX - pipeWidth: ', -pipeX - pipeWidth);
+                console.log('this.pos.x :', this.pos.x);
+                console.log('WIDTH :', WIDTH);
+                //return this.game.gameover();
+            }
+            else {
+                console.log('first check FALSE');
+            }
+
+        }
+    };
 
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.x < 0 ||
