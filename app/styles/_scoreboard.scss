@@ -1,7 +1,7 @@
 
 .Scoreboard {
 	position: absolute;
-	left: 50%;
+	left: 39%;
 	top: 0;
 	height: em(400px);
 	width: em(600px);
@@ -17,6 +17,42 @@
 	transition: transform 0.5s;
 }
 
+label[for=Score] {
+    position: absolute;
+    font-size: em(30px);
+    margin-top: 25%;
+    margin-left: -7%;
+	font-family: 'Comic Sans MS', serif;
+	color: white;
+}
+
+.Scoreboard-Score {
+    position: absolute;
+    font-size: em(30px);
+    margin-top: 31%;
+    margin-left: -1%;
+	font-family: 'Comic Sans MS', serif;
+	color: white;
+}
+
+label[for=HighScore] {
+    position: absolute;
+    font-size: em(30px);
+    margin-top: 37%;
+    margin-left: -13%;
+	font-family: 'Comic Sans MS', serif;
+	color: white;
+}
+
+.Scoreboard-HighScore {
+    position: absolute;
+    font-size: em(30px);
+    margin-top: 43%;
+    margin-left: -1%;
+	font-family: 'Comic Sans MS', serif;
+	color: white;
+}
+
 /**
  * Reset transform to animate it into the correct spot on the screen.
  */
@@ -27,7 +63,7 @@
 .Scoreboard-restart {
     position: absolute;
     margin-top: 55%;
-    margin-left: -16%;
+    margin-left: -9%;
 
 	font-size: inherit;
 	padding: em(4px) em(15px);
