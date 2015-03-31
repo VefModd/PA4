@@ -60,21 +60,41 @@ label[for=HighScore] {
 	transform: none;
 }
 
-.Scoreboard-restart {
+.Scoreboard-restart{
     position: absolute;
     margin-top: 55%;
     margin-left: -9%;
+    padding: em(4px) em(15px);
 
-	font-size: inherit;
-	padding: em(4px) em(15px);
-	border: em(2px) solid red;
-	background: none;
-	cursor: pointer;
+    background: #161a16;
+    background-image: -webkit-linear-gradient(top, #161a16, #e6e7f7);
+    background-image: -moz-linear-gradient(top, #161a16, #e6e7f7);
+    background-image: -ms-linear-gradient(top, #161a16, #e6e7f7);
+    background-image: -o-linear-gradient(top, #161a16, #e6e7f7);
+    background-image: linear-gradient(to bottom, #161a16, #e6e7f7);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: em(28px);
+    font-family: Arial;
+    color: #141213;
+    font-size: inherit;
+    //padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.Scoreboard-restart:hover {
+    background: #1a608c;
+    background-image: -webkit-linear-gradient(top, #1a608c, #6fabd4);
+    background-image: -moz-linear-gradient(top, #1a608c, #6fabd4);
+    background-image: -ms-linear-gradient(top, #1a608c, #6fabd4);
+    background-image: -o-linear-gradient(top, #1a608c, #6fabd4);
+    background-image: linear-gradient(to bottom, #1a608c, #6fabd4);
+    text-decoration: none;
 }
 
 .Scoreboard-restartText {
 	// NOTICE: You'll lose 10% of your score if you don't change this style!
-	font-family: 'Comic Sans MS', serif;
+	font-family: 'Lucida Console', sans-serif;
 	font-size: em(24px);
-	color: red;
+    font-variant: small-caps;
 }
