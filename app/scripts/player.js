@@ -17,9 +17,12 @@ window.Player = (function() {
 		this.game = game;
         this.pos = { x: 0, y: 0 };
         this.space = false;
+        this.mouse = false;
+        this.touch = false;
 
         $(window).on('keydown', function(e) {
             if(e.keyCode === 32 && !this.space) {
+                console.log('keydown');
                 SPEED = SPEED - 40;
                 document.getElementById('Flapp').play();
                 $('.Wing').css('transform-origin', 'bottom right');
@@ -28,7 +31,40 @@ window.Player = (function() {
             }
         });
         $(window).on('keyup', function() {
+            console.log('keyup');
             this.space = false;
+            SPEED = SPEED / 2;
+            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
+        });
+        $(window).on('mousedown', function() {
+            if(!this.mouse) {
+                console.log('mousedown');
+                SPEED = SPEED - 40;
+                document.getElementById('Flapp').play();
+                $('.Wing').css('transform-origin', 'bottom right');
+                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
+                this.mouse = true;
+            }
+        });
+        $(window).on('mouseup', function() {
+            console.log('mouseup');
+            this.mouse = false;
+            SPEED = SPEED / 2;
+            $('.Wing').css('transform', 'translateZ(0) rotate(0)');
+        });
+        $(window).on('touchstart', function() {
+            if(!this.touch) {
+                console.log('touchstart');
+                SPEED = SPEED - 40;
+                document.getElementById('Flapp').play();
+                $('.Wing').css('transform-origin', 'bottom right');
+                $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
+                this.touch = true;
+            }
+        });
+        $(window).on('touchend', function() {
+            console.log('touchend');
+            this.touch = false;
             SPEED = SPEED / 2;
             $('.Wing').css('transform', 'translateZ(0) rotate(0)');
         });
