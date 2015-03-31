@@ -13,6 +13,7 @@ window.Game = (function() {
         this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
         console.log('this: ', this);
 		this.isPlaying = false;
+        this.highscore = 0;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -66,10 +67,18 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+        if(this.highscore < this.player.score) {
+            this.highscore = this.player.score;
+        }
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
+        var score = $('#Score');
+        var highscore = $('#HighScore');
+        score.text(this.player.score);
+        highscore.text(this.highscore);
+
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
