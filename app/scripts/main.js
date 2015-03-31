@@ -43,4 +43,13 @@ $(function() {
         game.player.endFlapp();
         this.move = false;
     });
+
+    var resize = function () {
+        var fontSize = Math.min(window.innerWidth / 102.4, window.innerHeight / 57.6);
+        $('.GameCanvas').css('font-size', fontSize + 'px');
+    };
+
+    resize();
+    $(window).on('resize', resize);
 });
+
