@@ -10,7 +10,14 @@ $(function() {
 
     this.move = false;
 
+    /*
+     * Event listeners for game
+     */
     $(window).on('keydown', function(e) {
+        if(!game.isPlaying) {
+            $('.Scoreboard').removeClass('is-visible');
+            game.start();
+        }
         if(e.keyCode === 32 && !this.move) {
             game.player.startFlapp();
             this.move = true;
@@ -23,6 +30,10 @@ $(function() {
     });
 
     $('.GameCanvas').on('touchstart mousedown', function() {
+        if(!game.isPlaying) {
+            $('.Scoreboard').removeClass('is-visible');
+            game.start();
+        }
         if(!this.move) {
             game.player.startFlapp();
             this.move = true;
