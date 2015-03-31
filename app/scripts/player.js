@@ -29,6 +29,7 @@ window.Player = (function() {
 	    SPEED = 0;
         this.nextPipe = 'firstPipe';
         this.score = 0;
+        $('.GameScore').html(this.score);
 	};
 
 
@@ -82,7 +83,7 @@ window.Player = (function() {
 
     Player.prototype.startFlapp = function() {
         this.pos.deg = -25;
-        SPEED = SPEED - 40;
+        SPEED = SPEED - 55;
         document.getElementById('Flapp').play();
         $('.Wing').css('transform-origin', 'bottom right');
         $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');

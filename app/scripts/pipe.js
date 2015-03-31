@@ -1,7 +1,7 @@
 window.Pipe = (function() {
     'use strict';
-    var SPEED = 10;
-    var GAP = 25;
+    var SPEED = 25;
+    var GAP = 12;
 
     var NewPipe = function(pipe, xcoord, ycoord) {
         this.pipe = pipe;

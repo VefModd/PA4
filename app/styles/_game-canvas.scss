@@ -39,13 +39,13 @@
 
 .Foreground{
     position: absolute;
-    bottom: em(-58px);
+    bottom: 0;
     background-image: url("../images/icy.png");
     background-repeat: repeat-x;
-    width: em(1800px);
-    height: em(100px);
+    width: 120%;
+    height: 5em;
     z-index: 100;
-    -webkit-animation: animatedForeground linear 1.15s infinite;
+    -webkit-animation: animatedForeground linear 0.456s infinite;
 }
 
 .GameScore {
