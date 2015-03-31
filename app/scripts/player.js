@@ -71,23 +71,11 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 	    SPEED = 0;
-		//this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
 	};
 
 	Player.prototype.onFrame = function(delta) {
         SPEED = SPEED + GRAVITY;
         this.pos.y += delta * SPEED;
-
-        /*
-        if(Controls.keys.mousedown || Controls.keys.touchstart || Controls.keys.space) {
-            //this.pos.y -= 3;
-            this.pos.y -= delta * SPEED + 1.5;
-        }
-        else {
-            //this.pos.y += delta + 0.5;
-            this.pos.y += delta * SPEED;
-        }
-        */
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
