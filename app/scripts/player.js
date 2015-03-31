@@ -19,6 +19,8 @@ window.Player = (function() {
         this.space = false;
         this.mouse = false;
         this.touch = false;
+        this.nextPipe = 'firstPipe';
+        this.score = 0;
 
         $(window).on('keydown', function(e) {
             if(e.keyCode === 32 && !this.space) {
@@ -71,6 +73,8 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 	    SPEED = 0;
+        this.nextPipe = 'firstPipe';
+        this.score = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -93,11 +97,15 @@ window.Player = (function() {
             var height2 = parseFloat(this.game.pipe.el[2 * i + 1].style.height);
 
             if((pipeX <= this.pos.x + WIDTH) &&
-                (pipeX + pipeWidth >= this.pos.x) &&
-                ((this.pos.y <= height1) ||
-                ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2)))) {
-                document.getElementById('End').play();
-                return this.game.gameover();
+                (pipeX + pipeWidth >= this.pos.x)) {
+                if((this.pos.y <= height1) || ((this.pos.y + HEIGHT) >= (this.game.WORLD_HEIGHT - height2))) {
+                    document.getElementById('End').play();
+                    return this.game.gameover();
+                }
+                else if(this.game.pipe.pipes[i].name === this.nextPipe) {
+                    this.score++;
+                    this.nextPipe = this.game.pipe.pipes[(i + 1) % this.game.pipe.pipes.length].name;
+                }
             }
         }
     };
