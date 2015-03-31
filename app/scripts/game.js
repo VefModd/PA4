@@ -78,6 +78,7 @@ window.Game = (function() {
         var highscore = $('#HighScore');
         score.text(this.player.score);
         highscore.text(this.highscore);
+        console.log('score: ', score);
 
 		scoreboardEl
 			.addClass('is-visible')

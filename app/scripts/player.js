@@ -105,6 +105,7 @@ window.Player = (function() {
                 else if(this.game.pipe.pipes[i].name === this.nextPipe) {
                     this.score++;
                     this.nextPipe = this.game.pipe.pipes[(i + 1) % this.game.pipe.pipes.length].name;
+                    $('.GameScore').html(this.score);
                 }
             }
         }
