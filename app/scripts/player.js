@@ -16,12 +16,16 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
         this.pos = { x: 0, y: 0 };
+        this.space = false;
+
         $(window).on('keydown', function(e) {
-            if(e.keyCode === 32) {
+            if(e.keyCode === 32 && !this.space) {
                 SPEED = SPEED - 40;
-                //console.log('inside keydown');
-                return true;
+                this.space = true;
             }
+        });
+        $(window).on('keyup', function() {
+            this.space = false;
         });
 	};
 
