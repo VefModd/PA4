@@ -148,11 +148,11 @@ module.exports = function (grunt) {
                 generatedImagesDir: '.tmp/images/generated',
                 imagesDir: '<%= config.app %>/images',
                 javascriptsDir: '<%= config.app %>/scripts',
-                fontsDir: '<%= config.app %>/styles/fonts',
+                fontsDir: '<%= config.app %>/fonts',
                 importPath: '<%= config.app %>/bower_components',
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
+                httpFontsPath: '/fonts',
                 relativeAssets: false,
                 assetCacheBuster: false
             },
@@ -205,7 +205,7 @@ module.exports = function (grunt) {
                         '<%= config.dist %>/scripts/{,*/}*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
                         '<%= config.dist %>/images/{,*/}*.*',
-                        '<%= config.dist %>/styles/fonts/{,*/}*.*',
+                        '<%= config.dist %>/fonts/{,*/}*.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
                 }
@@ -314,7 +314,9 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'fonts/{,*/}*.*',
+                        'Media/*.*',
+                        'bower_components/font-awesome/css/font-awesome.min.css'
                     ]
                 }]
             },
