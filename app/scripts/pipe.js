@@ -32,7 +32,6 @@ window.Pipe = (function() {
 
     $('input[name="Difficulty"]').change(function() {
         GAP = parseInt(this.value);
-        console.log(GAP);
     });
 
     Pipe.prototype.reset = function() {

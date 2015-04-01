@@ -22,7 +22,6 @@ window.Controls = (function() {
      * @constructor
      */
     var Controls = function() {
-        console.log('insideControls');
         this._didJump = false;
         this.keys = {};
         $(window)
