@@ -1,5 +1,4 @@
 node_modules
-dist
 .tmp
 .sass-cache
 app/bower_components
@@ -8,3 +7,4 @@ test/bower_components
 .DS_Store
 .ds_store
 .DS_STORE
+dist/
