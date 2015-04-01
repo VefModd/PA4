@@ -57,7 +57,7 @@
     background-image: url("../images/icy.png");
     background-position: 0px 0px;
     background-repeat: repeat-x;
-    background-size: em(114px) em(50px);
+    background-size: 114px em(50px);
     z-index: 100;
     -webkit-animation: animatedForeground linear infinite;
     -moz-animation: animatedForeground linear infinite;
@@ -69,17 +69,17 @@
 
 @-webkit-keyframes animatedForeground {
     from { -webkit-transform: translate3d(0, 0, 0); }
-    to { -webkit-transform: translate3d(em(-114px), 0, 0); }
+    to { -webkit-transform: translate3d(-114px, 0, 0); }
 }
 
 @-moz-keyframes animatedForeground {
     from { -moz-transform: translate3d(0, 0, 0); }
-    to { -moz-transform: translate3d(em(-114px), 0, 0); }
+    to { -moz-transform: translate3d(-114px, 0, 0); }
 }
 
 @keyframes animatedForeground {
     from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(em(-114px), 0, 0); }
+    to { transform: translate3d(-114px, 0, 0); }
 }
 
 .GameScore {
