@@ -14,7 +14,12 @@
 
 	// Keep it off-screen
 	transform: translate(0, em(-400px));
+    -webkit-transform: translate(0, em(-400px));
+    -moz-transform: translate(0, em(-400px));
+
 	transition: transform 0.5s;
+	-webkit-transition: -webkit-transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
 }
 
 label[for=Score] {
@@ -61,7 +66,9 @@ label[for=HighScore] {
  * Reset transform to animate it into the correct spot on the screen.
  */
 .Scoreboard.is-visible {
-	transform: none;
+	-webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
 }
 
 .Scoreboard-restart{

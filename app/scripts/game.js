@@ -58,7 +58,11 @@ window.Game = (function() {
      */
     Game.prototype.reset = function() {
         $('.Foreground').css('webkitAnimationPlayState', 'running');
+        $('.Foreground').css('-moz-animation-play-state', 'running');
+        $('.Foreground').css('animation-play-state', 'running');
         $('.Background').css('webkitAnimationPlayState', 'running');
+        $('.Background').css('-moz-animation-play-state', 'running');
+        $('.Background').css('animation-play-state', 'running');
         this.player.reset();
         this.pipe.reset();
     };
@@ -89,7 +93,11 @@ window.Game = (function() {
                 that.start();
             });
         $('.Foreground').css('webkitAnimationPlayState', 'paused');
+        $('.Foreground').css('-moz-animation-play-state', 'paused');
+        $('.Foreground').css('animation-play-state', 'paused');
         $('.Background').css('webkitAnimationPlayState', 'paused');
+        $('.Background').css('-moz-animation-play-state', 'paused');
+        $('.Background').css('animation-play-state', 'paused');
         //document.getElementsByClassName('Foreground').style.webkitAnimationPlayState = 'paused';
     };
 

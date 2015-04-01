@@ -72,7 +72,11 @@ window.Pipe = (function() {
 
         for(i = 0; i < this.pipes.length; i++) {
             this.el[2 * i].style.transform = 'translate3d(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em, 0em)';
+            this.el[2 * i].style.webkitTransform = 'translate3d(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em, 0em)';
+            this.el[2 * i].style.MozTransform = 'translate3d(' + this.pipes[i].top.pos.x + 'em, ' + this.pipes[i].top.pos.y + 'em, 0em)';
             this.el[2 * i + 1].style.transform = 'translate3d(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em, 0em)';
+            this.el[2 * i + 1].style.webkitTransform = 'translate3d(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em, 0em)';
+            this.el[2 * i + 1].style.MozTransform = 'translate3d(' + this.pipes[i].bottom.pos.x + 'em, ' + this.pipes[i].bottom.pos.y + 'em, 0em)';
         }
     };
 

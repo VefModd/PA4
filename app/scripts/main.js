@@ -14,7 +14,7 @@ $(function() {
      * Event listeners for game
      */
     $(window).on('keydown', function(e) {
-        if(!game.isPlaying) {
+        if(e.keyCode === 32 && !game.isPlaying) {
             $('.Scoreboard').removeClass('is-visible');
             game.start();
         }
