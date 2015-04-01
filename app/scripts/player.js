@@ -44,6 +44,8 @@ window.Player = (function() {
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.pos.deg + 'deg)');
+		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.pos.deg + 'deg)');
+		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.pos.deg + 'deg)');
 
         this.checkCollisionWithBounds();
         this.checkCollisionWithPipes();
@@ -86,12 +88,18 @@ window.Player = (function() {
         SPEED = SPEED - 55;
         document.getElementById('Flapp').play();
         $('.Wing').css('transform-origin', 'bottom right');
+        $('.Wing').css('-moz-transform-origin', 'bottom right');
+        $('.Wing').css('-webkit-transform-origin', 'bottom right');
         $('.Wing').css('transform', 'translateZ(0) rotate(-35deg)');
+        $('.Wing').css('-moz-transform', 'translateZ(0) rotate(-35deg)');
+        $('.Wing').css('-webkit-transform', 'translateZ(0) rotate(-35deg)');
     };
 
     Player.prototype.endFlapp = function() {
         SPEED = SPEED / 2;
         $('.Wing').css('transform', 'translateZ(0) rotate(0)');
+        $('.Wing').css('-moz-transform', 'translateZ(0) rotate(0)');
+        $('.Wing').css('-webkit-transform', 'translateZ(0) rotate(0)');
     };
 
 
