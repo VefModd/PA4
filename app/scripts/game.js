@@ -98,7 +98,6 @@ window.Game = (function() {
         $('.Background').css('webkitAnimationPlayState', 'paused');
         $('.Background').css('-moz-animation-play-state', 'paused');
         $('.Background').css('animation-play-state', 'paused');
-        //document.getElementsByClassName('Foreground').style.webkitAnimationPlayState = 'paused';
     };
 
     /**
