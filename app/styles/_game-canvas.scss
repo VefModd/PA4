@@ -31,6 +31,8 @@
     top: 0;
     left: 0;
     -webkit-animation: animatedBackground linear 40s infinite;
+    -moz-animation: animatedBackground linear 40s infinite;
+    animation: animatedBackground linear 40s infinite;
 }
 
 @-webkit-keyframes animatedBackground {
@@ -38,7 +40,15 @@
     to { -webkit-transform: translate3d(-2000px, 0, 0); }
 }
 
+@-moz-keyframes animatedBackground {
+    from { -moz-transform: translate3d(0, 0, 0); }
+    to { -moz-transform: translate3d(-2000px, 0, 0); }
+}
 
+@keyframes animatedBackground {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-2000px, 0, 0); }
+}
 .Foreground{
     height: em(50px);
     width: em(1366px);
@@ -50,10 +60,24 @@
     background-size: em(114px) em(50px);
     z-index: 100;
     -webkit-animation: animatedForeground linear infinite;
+    -moz-animation: animatedForeground linear infinite;
+    animation: animatedForeground linear infinite;
     -webkit-animation-duration: 1.456s;
+    -moz-animation-duration: 1.456s;
+    animation-duration: 1.456s;
 }
 
 @-webkit-keyframes animatedForeground {
+    from { -webkit-transform: translate3d(0, 0, 0); }
+    to { -webkit-transform: translate3d(em(-114px), 0, 0); }
+}
+
+@-moz-keyframes animatedForeground {
+    from { -moz-transform: translate3d(0, 0, 0); }
+    to { -moz-transform: translate3d(em(-114px), 0, 0); }
+}
+
+@keyframes animatedForeground {
     from { transform: translate3d(0, 0, 0); }
     to { transform: translate3d(em(-114px), 0, 0); }
 }
