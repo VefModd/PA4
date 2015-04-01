@@ -10,3 +10,5 @@ npm install
 bower install
 grunt server
 ```
+> Note! To compile the sass and images you need compass and ruby [instructions](https://github.com/gruntjs/grunt-contrib-compass/blob/master/README.md):)
+**i.** Or try the game [HERE] (http://jfjonsson.github.io)
