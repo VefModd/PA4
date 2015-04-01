@@ -30,6 +30,10 @@ window.Pipe = (function() {
         ];
     };
 
+    $('input[name="Difficulty"]').change(function() {
+        GAP = parseInt(this.value);
+    });
+
     Pipe.prototype.reset = function() {
         for(var i = 0; i < this.pipes.length; i++) {
             this.pipes[i].top.pos.x = this.game.WORLD_WIDTH + this.game.WORLD_WIDTH * (i * 0.5);
