@@ -52,6 +52,7 @@
             <i id="mute" class="fa fa-volume-up fa-2x"></i>
         </div>
 
+
         <div>
             <audio id="End" src="audio/Crash.m4a" preload="auto">
                 <p>Your browser does not support the <code>audio</code> element </p>
@@ -65,6 +66,16 @@
                 <p>Your browser does not support the <code>audio</code> element </p>
             </audio>
         </div>
+
+        <div>
+            <label for="Difficulty"> Difficulty: </label>
+            <div class="Difficulty">
+                <input type="radio" name="Difficulty" value="12">Hard<br>
+                <input type="radio" name="Difficulty" value="20" checked>Medium<br>
+                <input type="radio" name="Difficulty" value="35">Dabs<br>
+            </div>
+        </div>
+
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
