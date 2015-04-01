@@ -57,10 +57,10 @@ window.Game = (function() {
      * Resets the state of the game so a new game can be started.
      */
     Game.prototype.reset = function() {
-        $('.Foreground').css('webkitAnimationPlayState', 'running');
+        $('.Foreground').css('-webkit-animation-play-state', 'running');
         $('.Foreground').css('-moz-animation-play-state', 'running');
         $('.Foreground').css('animation-play-state', 'running');
-        $('.Background').css('webkitAnimationPlayState', 'running');
+        $('.Background').css('-webkit-animation-play-state', 'running');
         $('.Background').css('-moz-animation-play-state', 'running');
         $('.Background').css('animation-play-state', 'running');
         this.player.reset();
@@ -92,10 +92,10 @@ window.Game = (function() {
                 scoreboardEl.removeClass('is-visible');
                 that.start();
             });
-        $('.Foreground').css('webkitAnimationPlayState', 'paused');
+        $('.Foreground').css('-webkit-animation-play-state', 'paused');
         $('.Foreground').css('-moz-animation-play-state', 'paused');
         $('.Foreground').css('animation-play-state', 'paused');
-        $('.Background').css('webkitAnimationPlayState', 'paused');
+        $('.Background').css('-webkit-animation-play-state', 'paused');
         $('.Background').css('-moz-animation-play-state', 'paused');
         $('.Background').css('animation-play-state', 'paused');
     };
