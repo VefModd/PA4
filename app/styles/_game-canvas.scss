@@ -29,13 +29,13 @@
 .Background{
     position: absolute;
     background-image: url("../images/thewallfinal.png");
-    background-size: 100% 100%;
+    background-size: 200em 53.6em;
     background-repeat: repeat-x;
     height: 100%;
-    width: em(4000px);
+    width: 400em;
     top: 0;
     left: 0;
-    -webkit-animation: animatedBackground linear 40s infinite;
+    -webkit-animation: animatedBackground linear 4s infinite;
 }
 
 .Foreground{
@@ -61,7 +61,7 @@
 
 @-webkit-keyframes animatedBackground {
     from { -webkit-transform: translate3d(0, 0, 0); }
-    to { -webkit-transform: translate3d(em(-2000px), 0, 0); }
+    to { -webkit-transform: translate3d(-200em, 0, 0); }
 }
 
 @-webkit-keyframes animatedForeground {
