@@ -41,7 +41,7 @@
 
 .Foreground{
     height: em(50px);
-    width: em(1252px);
+    width: em(1366px);
     position: absolute;
     bottom: 0;
     background-image: url("../images/icy.png");
@@ -50,7 +50,7 @@
     background-size: em(114px) em(50px);
     z-index: 100;
     -webkit-animation: animatedForeground linear infinite;
-    -webkit-animation-duration: 0.456s;
+    -webkit-animation-duration: 1.456s;
 }
 
 @-webkit-keyframes animatedForeground {

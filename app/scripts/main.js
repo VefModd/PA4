@@ -47,7 +47,6 @@ $(function() {
     var resize = function () {
         var fontSize = Math.min(window.innerWidth / 102.4, window.innerHeight / 57.6);
         $('.GameCanvas').css('font-size', fontSize + 'px');
-        $('.Foreground').css('-webkit-animation-duration', (114 / (fontSize * 25)) + 's');
     };
 
     resize();
